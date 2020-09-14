@@ -1,73 +1,111 @@
-## Projeto inicial para `Landing Page` (sem uso de Laravel)
+## `Projeto para iniciar o #100DaysOfCode Challenge`
 
-Para maiores informações do processo de desenvolvimento como um todo,
-olhar a
-[Wiki do projeto starter da F&MD](https://github.com/agenciafmd/starter/wiki)
+   Salve, neste repositório irei registar todo o histórico do desafio, depois de ficar hypado com muitas coisas decidi focar em algumas
+   e umas delas é o javascript, então para manter meu hype em aprender dei start nese desafio e escrever um repositório contando toda a tragetória.
+   
+   O desafio será aprender JavaScript do zero, desde o que é até o nível avançado, não estou muito preocupado no fator tempo, o único objetivo
+   será que no final eu tenha compreendido/apreendido o javascript.
+   
+   No README irei colocar um resumo do estudo dia, acho que isso será legal para fixar o que eu estudei e também será útil para eu revisar/estudar nos finais de semana
+   o que eu vi durante a semana. 
 
-## Habilitando o BrowserSync
+## DIA X
 
-- Copiar e renomear o arquivo `resources/js/environment.example.js` para
-  `resources/js/environment.js`
-- Alterar o dominio (`domain`) no arquivo `environment.js`
-  -   Não é interessante deixar o arquivo environment.js direto no
-      projeto pois cada desenvolvedor pode colocar o nome que quiser no
-      dominio do site localmente
+- Arrays:
+    -  Arrays são um tipo de váriavel especial, eles armezam uma lista de valores e não somente um unico valor. Os valores no array são
+    atribuidos dentro de colchetes, separados por '' e vírgulas. 
+    
+    - Também pude perceber que os arrays podem ter técnicas diferentes de serem declaros, como por exemplo:
+    
+        - Notação literal de array: Criamos uma var com o nome e ja declaramos os valores do array:
+            - `var colors = ['black','red','pink'];`   
+              
+        - Construtor de array: Criamos uma var com o nome e após isso declarmos um New Array(), diferente da técnica de notação literal
+        aqui declarmos os valores dentro de () e não []:
+           - `var colors = New Array('black','red','pink');` 
+           
+       Quando quisermos acessar um valor especifico em um array, utilizamos o determinado indice do item, o indice indica 
+       determinada posição do elemento no array e também vale lembrar que os itens no Array começam em 0 e não em 1. Sendo assim,
+       
+        - black - 0
+        - red - 1
+        - pink - 2      
+        
+        Então quando quisermos acessar algum item especifico, podemos fazer: 
+        
+        `console.log(colors.item(1));`
+        
+        Assim estariamos dando um console no item na posição 1 do array.
+        
+        Caso queiramosa alterar um determinado valor no array, temos que passar o array, a posição desejada e o novo valor, sendo assim:
+        
+        `colors[2] = 'orange';`
+        
+        Assim estariamos alterando a cor rosa para a nova cor laranja. E caso queiramos adicionar um novo item no array, podemos 
+        passar o array, a nova posição e o novo item:
+        
+        `colors[3] = 'green';` => `['black','red','orange','green'];`
+     
+## DIA X - Funções
 
+- **Funções:**
+   
+   As funções em JavaScript consistem em ser uma série de instruções agrupadas que irá executar determinada tarefa. As funções podem ser comparadas
+   com métodos, a única diferença é que os métodos são declarados dentro do objeto, ja as funções são declaradas fora.
 
-## Novos recursos para utilizar com npm run prod
-####### Add to 16-07-2020
+    As funções podem e não podem serem executas assim que a página é carregada, como por exemplo, podemos ter uma função que o usuário ao clicar
+    em determinado campo da página, apareça um alert dizendo 'Hello". Isso quer dizer que você está `chamando` a função.
+    
+    Algumas funções podem receber valores para alimentar a tarefa a ser executada, como por exemplo podemos ter uma função para calcular a
+    soma de 2 números, essas informações que são passadas para a função são denominadas de `parâmetros` e o resultado final dessa função, terá um valor
+    final, isso será a resposta da função que também é conhecida como `valor de retorno`. 
+    
+-   **Declarar uma função**
 
-O arquivo `environment.js` passa a ser um centralizador de alteração de 
-dados da `resources/html/index.html` para `public/index.html` (semelhante ao env 
-que está no starter-laravel)
+    Quando formos declarmos uma função, precisamos dar um nome que informa o que ela irá fazer, e escrevemos as instruções que sera necessário para realizar a tarefa, isso se chama
+    `declaração de função`.
+    
+    Exemplos:
+    - [Declarando funções e executando-as](https://github.com/ferrorenan/100DaysOfCode-JS/blob/master/resources/html/funcoes/index.html)
+    
+- **Parâmetros**
+    -   As funções também podem precisar de informações, ou seja, podemos ter funções que executam pequenas tarefas, como a simples saída de um texto e também
+podemos ter funções que calculam a área de um retângulo por exemplo. Essas funções, precisam de informações para realizarem sua tarefa.
+Nestes casos, essas informações são conehcidas como `parâmetros`, esse `parâmetros` funcionam como váriaveis para a função, como por exemplo:
 
-No arquivo é possível customizar alguns dados que deveríamos adicionar manualmente, 
-ex: título de página, descrição, gtm, etc...
+        function getArea(width, height){
+            return width * area;
+        }
+        
+Perceba que na função getArea() temos o `width e o height`, essas duas propriedades são o parâmetro da função, são como variáveis da função
+que iram receber as informações necessárias para realizarmos a tarefa. 
 
-A propriedade 'domain' é utilizada no critical-css  para executar o build do recurso
+- **Argumentos** 
+    - Quando utilizamos funções com parâmetros, para realizarmos a chamada delas nós precisamos fornecer dados para alimentar a função, esses dados fornecidos 
+    são conhecidos como `argumentos`, esses `argumentos` podem ser fornecidos de algumas formas:
+    
+        - **Argumentos como valores:**
+        
+             Chamamos a função e já passamos os valores reais para a função, como por exemplo:
+             
+             `getArea(3,5);`   
+             
+        - **Argumentos como váriaveis:**
+             
+             Invez de declararmos logo de cara os valores reais, podemos declarar váriaveis e passar-las para a função, como por exemplo:
+                  
+                  wallWidth: 3;
+                  wallHeight: 5;
+                  
+                  getArea(wallWidth, wallHeight);   
 
-Dentro de 'postStrings' temos as propriedades a serem customizadas conforme citado
-acima. 
+        Você pode talvez notar que argumentos e parâmetros são bem parecidos, mas os parâmetros são as váriaveis na função que iram receber algum valor, quando chamamos essa função que precisa
+        de dados para realizar sua tarefa, podemos pensar que estamos argumentando, dando informações necessárias para ela realizar seu objetivo.
+    
+         Exemplos:
+            - [Declarando funções e executando-as](https://github.com/ferrorenan/100DaysOfCode-JS/blob/master/resources/html/funcoes/index.html)
 
-Para implementação dos dois novos recursos ( Critical-css e post-prod ) foi criado
-dois arquivos em que são: `/resources/js/critical-path.js` e `/resources/js/post-prod.js`
-
-### Detalhes sobre `/resources/js/critical-path.js`
-
-O Script faz o uso file system do nodejs que é feito a leitura da 
-`/public/index.html` e da `/public/css/critical/index.css` 
-e fica armazenado em variavéis.  O segundo arquivo foi gerado pelo critical-css que
-está no `webpack.mix.js` que tem como objetivo gerar o css do canvas que está configurado
-em dimensions, assim iremos adicionar o estilo dentro do head da página 
-`(public/index.html)` para ganho de performance de carregamento.
-
-No script localizaremos a string `<!--fmd:criticalPath-->` que será trocada pelo
-conteúdo do css que foi gerado pelo critical-css, depois é gravado pelo file 
-system e é gerado um novo arquivo com a modificação na `/public/index.html`
-
-### Detalhes sobre `/resources/js/post-prod.js`
-
-O Script é semelhante ao de cima, faz a leitura e depois grava com os dados 
-modificados. Sua diferença é a inclusão do arquivo `environment.js` ao script. 
-É executa um foreach no objeto 'postStrings' para localizar o identificador
-que foi incluído na página `/resources/html/index.html` e assim feito a troca de 
-conteúdo que está presente no arquivo `environment.js`.
-
-Portanto é necessário que a string do arquivo `/resources/html/index.html` seja 
-correspondente a propriedade que está criada no arquivo `environment.js`
-
-exemplo: <br>
-`/resources/html/index.html` temos `<title><!--fmd:titlePage--></title>` <br>
-`environment.js` temos `titlePage: 'Starter-LP F&MD',`
-
-O match é feito através do titlePage, caso seja necessário incluir um novo, seguir
-os passos abaixo:
-
-`/resources/html/index.html` criar `<!--fmd:exemploNovo-->` <br>
-`environment.js` criar dentro de postScript `exemploNovo: 'novo conteúdo',`
-
-Para adicionar os novos recursos para `/public/` execute o comando:
-
-`npm run prod`
-
-O comando vai executar o script de produção, critical-path e post-prod
+        ![Logo](https://github.com/ferrorenan/100DaysOfCode-JS/blob/master/public/images/carbon.png "Logo")
+        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

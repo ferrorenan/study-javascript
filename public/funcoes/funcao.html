@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>100 Days Of Code - JS</title>
+    <link rel="stylesheet"
+          href="/css/frontend.css">
+  </head>
+  <body>
+    <div class="block-full block-centered bg-primary">
+      <h2 id="message"
+          class="text-white">
+        I'm Renan Carlos
+      </h2>
+    </div>
+    <script>
+
+      /*Aqui declaramos uma var para armazenar o conteúdo do texto*/
+      var message = 'Para ver o código das funções, use o inspect :D';
+
+      function /*Function é a palavra chave*/
+      updateMessage() /*Nome da função, precisamos dar um nome para a função*/
+      { /*Bloco de código que executara a tarefa da função*/
+
+        var el = document.getElementById('message');
+        el.textContent = message;
+      }
+
+      /*Aqui realizamos a chamada da função, que ira alterar o texto do html por javascript*/
+      updateMessage();
+
+
+      /*Aqui criamos uma função com seus parâmetros*/
+      function totalGastos(contaLuz, contaAgua){
+        /*Aqui calculamos e retornamos a somatória das váriaveis*/
+        return contaLuz + contaAgua;
+      }
+      /*Aqui eu dei um console para exibir o valor do return da função,
+      e também passei os argumentos para alimentar os parâmetros nda função*/
+      console.log(totalGastos(25,125));
+    </script>
+
+    <script src="/js/frontend.js"></script>
+  </body>
+</html>
